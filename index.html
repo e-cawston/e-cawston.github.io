@@ -5,168 +5,189 @@
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<link rel="stylesheet" href="assets/css/main.css" />
+		<style>
+			/* Custom Styles */
+			.intro-socials { margin-top: 1.5rem; list-style: none; padding: 0; }
+			.intro-socials li { display: inline-block; margin: 0 10px; }
+			.fa-orcid { color: #A6CE39; }
+			.scientific-name { font-style: italic; }
+
+			/* Modal/Lightbox Logic */
+			.modal-overlay {
+				position: fixed;
+				top: 0; left: 0;
+				width: 100%; height: 100%;
+				background: rgba(0, 0, 0, 0.9);
+				display: none;
+				z-index: 10000;
+				justify-content: center;
+				align-items: center;
+			}
+			.modal-overlay:target { display: flex; }
+			.modal-content {
+				position: relative;
+				width: 95%;
+				max-width: 1100px;
+				height: 85vh;
+				background: #fff;
+				border-radius: 8px;
+				overflow: hidden;
+			}
+			.close-modal {
+				position: absolute;
+				top: 10px; right: 20px;
+				color: #333;
+				font-size: 2rem;
+				text-decoration: none;
+				font-weight: bold;
+				z-index: 10001;
+			}
+		</style>
 	</head>
 	<body class="is-preload">
 
 		<div id="header">
-
 				<div class="top">
-
 					<div id="logo">
-							<span class="image avatar48"><img src="images/avatar.jpg" alt="" /></span>
-							<h1 id="title">Euan Cawston</h1>
-							<p>PhD Candidate @ TSL</p>
-						</div>
-
+						<span class="image avatar48"><img src="images/avatar.jpg" alt="" /></span>
+						<h1 id="title">Euan Cawston</h1>
+						<p>PhD Candidate @ TSL</p>
+					</div>
 					<nav id="nav">
-							<ul>
-								<li><a href="#top" id="top-link"><span class="icon solid fa-home">Intro</span></a></li>
-								<li><a href="#portfolio" id="portfolio-link"><span class="icon solid fa-th">Research Portfolio</span></a></li>
-								<li><a href="#about" id="about-link"><span class="icon solid fa-user">About Me</span></a></li>
-								<li><a href="#contact" id="contact-link"><span class="icon solid fa-envelope">Contact</span></a></li>
-							</ul>
-						</nav>
-
-				</div>
-
-				<div class="bottom">
-
-					<ul class="icons">
-							<li><a href="https://bsky.app/" class="icon brands fa-cloud"><span class="label">BlueSky</span></a></li>
-							<li><a href="https://linkedin.com/" class="icon brands fa-linkedin-in"><span class="label">LinkedIn</span></a></li>
-							<li><a href="https://github.com/" class="icon brands fa-github"><span class="label">Github</span></a></li>
-							<li><a href="mailto:your-email@tsl.ac.uk" class="icon solid fa-envelope"><span class="label">Email</span></a></li>
+						<ul>
+							<li><a href="#top" id="top-link"><span class="icon solid fa-home">Intro</span></a></li>
+							<li><a href="#portfolio" id="portfolio-link"><span class="icon solid fa-th">Publications & Posters</span></a></li>
+							<li><a href="#about" id="about-link"><span class="icon solid fa-user">About Me</span></a></li>
+							<li><a href="#contact" id="contact-link"><span class="icon solid fa-envelope">Contact</span></a></li>
 						</ul>
-
+					</nav>
 				</div>
-
+				<div class="bottom">
+					<ul class="icons">
+						<li><a href="https://bsky.app/" class="icon brands fa-cloud"><span class="label">BlueSky</span></a></li>
+						<li><a href="https://linkedin.com/" class="icon brands fa-linkedin-in"><span class="label">LinkedIn</span></a></li>
+						<li><a href="https://github.com/" class="icon brands fa-github"><span class="label">Github</span></a></li>
+						<li><a href="https://orcid.org/" class="icon brands fa-orcid"><span class="label">ORCID</span></a></li>
+					</ul>
+				</div>
 			</div>
 
 		<div id="main">
 
 				<section id="top" class="one dark cover">
 						<div class="container">
-
 							<header>
 								<span class="image" style="margin-bottom: 2em; display: inline-block;">
-									<img src="images/avatar.jpg" alt="Portrait" style="border-radius: 50%; width: 180px; height: 180px; object-fit: cover; border: 4px solid rgba(255,255,255,0.2);" />
+									<img src="images/avatar.jpg" alt="Euan Cawston" style="border-radius: 50%; width: 180px; height: 180px; object-fit: cover; border: 4px solid rgba(255,255,255,0.2);" />
 								</span>
 								<h2 class="alt"><strong>Euan Cawston</strong></h2>
-								<p>Molecular Plant Pathologist.<br />
-								PhD Candidate at The Sainsbury Laboratory, Norwich.</p>
+								<p>Molecular Plant Pathologist<br />
+								PhD Candidate at The Sainsbury Laboratory, Norwich</p>
+								
+								<ul class="intro-socials">
+									<li><a href="https://bsky.app/" class="icon brands fa-cloud fa-2x"><span class="label">BlueSky</span></a></li>
+									<li><a href="https://linkedin.com/" class="icon brands fa-linkedin-in fa-2x"><span class="label">LinkedIn</span></a></li>
+									<li><a href="https://github.com/" class="icon brands fa-github fa-2x"><span class="label">Github</span></a></li>
+									<li><a href="https://orcid.org/" class="icon brands fa-orcid fa-2x"><span class="label">ORCID</span></a></li>
+								</ul>
 							</header>
-
-							<footer>
-								<a href="#portfolio" class="button scrolly">Explore My Research</a>
-							</footer>
-
 						</div>
 					</section>
 
 				<section id="portfolio" class="two">
 						<div class="container">
-
-							<header>
-								<h2>Publications and Pre-prints</h2>
-							</header>
-
-							<header>
-								<h4>Key research themes</h4>
-							</header>
-
-							<p>-- Fungal Pathogenesis -- Plant Immunity -- Molecular Biology --</p>
-
+							<header><h2>Publications and Posters</h2></header>
 							<div class="row">
-								<div class="col-4 col-12-mobile">
-									<article class="item">
-										<a href="#" class="image fit"><img src="images/pic02.jpg" alt="" /></a>
-										<header>
-											<h3>E.Cawston et al., 2025.MPMI. Poster 340.</h3>
-										</header>
-									</article>
-									<article class="item">
-										<a href="#" class="image fit"><img src="images/pic03.jpg" alt="" /></a>
-										<header>
-											<h3>E.Cawston et al., 2024. PPATH. P-???.</h3>
-										</header>
-									</article>
-								</div>
-								<div class="col-4 col-12-mobile">
-									<article class="item">
-										<a href="#" class="image fit"><img src="images/pic04.jpg" alt="" /></a>
-										<header>
-											<h3>Lintz et al., 2024. Journal of Experimental Botany.Genetically-clustered antifungal phytocytokines and receptor protein family members cooperate to trigger plant immune signaling.</h3>
-										</header>
-									</article>
-									<article class="item">
-										<a href="#" class="image fit"><img src="images/pic05.jpg" alt="" /></a>
-										<header>
-											<h3>E.cawston et al., 2024. IMC. Poster 01-254.</h3>
-										</header>
-									</article>
-								</div>
-								<div class="col-4 col-12-mobile">
-									<article class="item">
-										<a href="#" class="image fit"><img src="images/pic06.jpg" alt="" /></a>
-										<header>
-											<h3>Lintz et al., 2022. Frontiers in Agronomy. A Short Review of Anti-Rust Fungi Peptides: Diversity and Bioassays.</h3>
-										</header>
-								</div>
-							</div>
 
+								<div class="col-4 col-12-mobile">
+									<article class="item">
+										<a href="#pop1" class="image fit"><img src="images/m_exbotj_76_17cover.jpeg" alt="MPMI Poster" /></a>
+										<header><h3>E.Cawston et al., 2025. MPMI.</h3></header>
+									</article>
+								</div>
+
+								<div class="col-4 col-12-mobile">
+									<article class="item">
+										<a href="#pop2" class="image fit"><img src="images/m_exbotj_76_17cover.jpeg" alt="JEB Cover" /></a>
+										<header><h3>Lintz et al., 2024. <span class="scientific-name">JEB</span>.</h3></header>
+									</article>
+								</div>
+
+								<div class="col-4 col-12-mobile">
+									<article class="item">
+										<a href="#pop3" class="image fit"><img src="images/frontiers.jpeg" alt="Frontiers Cover" /></a>
+										<header><h3>Lintz et al., 2022. <span class="scientific-name">Frontiers</span>.</h3></header>
+									</article>
+								</div>
+
+                                <div class="col-4 col-12-mobile">
+									<article class="item">
+										<a href="#pop4" class="image fit"><img src="images/frontiers.jpeg" alt="Pmk1 Poster" /></a>
+										<header><h3>Pmk1 Cascade Poster</h3></header>
+									</article>
+								</div>
+
+							</div>
 						</div>
 					</section>
 
 				<section id="about" class="three">
-						<div class="container">
+                    <div class="container">
+                        <header><h2>About Me</h2></header>
+                        <p>I am a researcher at <strong>The Sainsbury Laboratory (TSL)</strong> in Norwich, currently pursuing my PhD. As a member of the Proteomics Team under <strong>Dr. Frank Menke</strong>, I specialize in the molecular mechanisms of plant-infecting fungi.</p>
+                        <p>My primary research interest lies in studying the intricate signaling pathways within <span class="scientific-name">Magnaporthe oryzae</span>.</p>
+                    </div>
+                </section>
 
-							<header>
-								<h2>About Me</h2>
-							</header>
+                <section id="contact" class="four">
+                    <div class="container">
+                        <header><h2>Contact</h2></header>
+                        <form method="post" action="#">
+                            <div class="row">
+                                <div class="col-6 col-12-mobile"><input type="text" name="name" placeholder="Name" /></div>
+                                <div class="col-6 col-12-mobile"><input type="text" name="email" placeholder="Email" /></div>
+                                <div class="col-12"><textarea name="message" placeholder="Message"></textarea></div>
+                                <div class="col-12"><input type="submit" value="Send Message" /></div>
+                            </div>
+                        </form>
+                    </div>
+                </section>
 
-							<a href="#" class="image featured"><img src="images/pic08.jpg" alt="Laboratory Background" /></a>
+				<div id="pop1" class="modal-overlay">
+					<div class="modal-content">
+						<a href="#portfolio" class="close-modal">&times;</a>
+						<iframe src="pdfs/poster_mpmi_2025v3.pdf" width="100%" height="100%"></iframe>
+					</div>
+				</div>
 
-							<p>I am a researcher at <strong>The Sainsbury Laboratory (TSL)</strong> in Norwich, currently pursuing my PhD. As a member of the Proteomics Team under <strong>Dr. Frank Menke</strong>, I specialize in the molecular mechanisms of plant-infecting fungi.</p>
-							
-							<p>My primary research interest lies in studying the intricate signaling pathways within <em>Magnaporthe oryzae</em>. By using this model system, I aim to uncover how fungal pathogens sense their environment and coordinate the cellular processes required to colonize host plants.</p>
+				<div id="pop2" class="modal-overlay">
+					<div class="modal-content">
+						<a href="#portfolio" class="close-modal">&times;</a>
+						<iframe src="pdfs/erae297.pdf" width="100%" height="100%"></iframe>
+					</div>
+				</div>
 
-						</div>
-					</section>
+				<div id="pop3" class="modal-overlay">
+					<div class="modal-content">
+						<a href="#portfolio" class="close-modal">&times;</a>
+						<iframe src="pdfs/fagro-04-966211.pdf" width="100%" height="100%"></iframe>
+					</div>
+				</div>
 
-				<section id="contact" class="four">
-						<div class="container">
-
-							<header>
-								<h2>Get in Touch</h2>
-							</header>
-
-							<p>If you are interested in my research or potential collaborations regarding fungal proteomics and molecular signaling, please feel free to reach out.</p>
-
-							<form method="post" action="#">
-								<div class="row">
-									<div class="col-6 col-12-mobile"><input type="text" name="name" placeholder="Name" /></div>
-									<div class="col-6 col-12-mobile"><input type="text" name="email" placeholder="Email" /></div>
-									<div class="col-12">
-										<textarea name="message" placeholder="Message"></textarea>
-									</div>
-									<div class="col-12">
-										<input type="submit" value="Send Message" />
-									</div>
-								</div>
-							</form>
-
-						</div>
-					</section>
+                <div id="pop4" class="modal-overlay">
+					<div class="modal-content">
+						<a href="#portfolio" class="close-modal">&times;</a>
+						<iframe src="pdfs/Pmk1_cascade_poster_Final.pdf" width="100%" height="100%"></iframe>
+					</div>
+				</div>
 
 			</div>
 
 		<div id="footer">
-
-				<ul class="copyright">
-						<li>&copy; Euan Cawston. All rights reserved.</li><li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
-					</ul>
-
-			</div>
+            <ul class="copyright">
+                <li>&copy; Euan Cawston. All rights reserved.</li><li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+            </ul>
+        </div>
 
 		<script src="assets/js/jquery.min.js"></script>
 			<script src="assets/js/jquery.scrolly.min.js"></script>
@@ -175,6 +196,6 @@
 			<script src="assets/js/breakpoints.min.js"></script>
 			<script src="assets/js/util.js"></script>
 			<script src="assets/js/main.js"></script>
-
 	</body>
-</html>
+	</html>
+								
