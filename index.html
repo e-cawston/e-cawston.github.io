@@ -7,8 +7,19 @@
 		<link rel="stylesheet" href="assets/css/main.css" />
 		<style>
 			/* Custom Styles */
-			.intro-socials { margin-top: 1.5rem; list-style: none; padding: 0; }
-			.intro-socials li { display: inline-block; margin: 0 10px; vertical-align: middle; }
+			.intro-socials { 
+				margin-top: 1.5rem; 
+				list-style: none; 
+				padding: 0;
+				display: flex;
+				justify-content: center;
+				align-items: center;
+				gap: 20px;
+			}
+			.intro-socials li { 
+				display: inline-flex; 
+				align-items: center;
+			}
 			.fa-orcid { color: #A6CE39; }
 			.scientific-name { font-style: italic; }
 			
@@ -18,12 +29,13 @@
 				height: 20px;
 				vertical-align: middle;
 				margin-bottom: 3px;
-				filter: brightness(0) invert(1); /* Makes the butterfly white for the dark sidebar */
+				filter: brightness(0) invert(1); /* White for dark sidebar */
 			}
 			.intro-socials .bsky-custom {
-				width: 40px; 
-				height: 40px;
-				filter: none; /* Keeps it the original BlueSky blue in the light section */
+				width: 32px; 
+				height: 32px;
+				margin: 0;
+				filter: brightness(0) invert(1); /* White for dark intro section */
 			}
 
 			/* Modal/Lightbox Logic */
